@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PATIENT FORM</title>
+  </head>
+  <body>
+    <h2>PATIENT FORM</h2>
+    <form method="post">
+      {% csrf_token %} {{ formp.as_p }}
+      <button type="submit">SUBMIT</button>
+      <button type="button"><a href="/logout"></a>LOGOUT</button>
+    </form>
+  </body>
+</html>

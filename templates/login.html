@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To Nasha Mukti Portal-Login</title>
+  </head>
+  <body>
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}<!-- {{ form.email.label_tag }} {{ form.email }}
+      {{form.password.label_tag }} {{ form.password }} -->
+      <p>email: <input type="email" name="email" id="email" /></p>
+      <p>password: <input type="password" name="password" id="password" /></p>
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>
