@@ -33,7 +33,8 @@ class CustomLoginForm(AuthenticationForm):
 
 
 class patientform(forms.Form):
-    name = forms.CharField(label='Full Name', max_length=100)
+    name = forms.CharField(label='Full Name', max_length=100, widget=forms.TextInput(
+        attrs={'placeholder': 'Enter Patient Name'}))
     age = forms.IntegerField(label='Age', min_value=0)
     contact_number = forms.CharField(label='Contact Number', min_length=10)
     address = forms.CharField(label='Address', max_length=50)

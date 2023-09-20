@@ -81,8 +81,8 @@ DATABASES = {
         'NAME': 'user_registration',
         'USER': 'root',
         'PASSWORD': 'Shivam@7219',
-        'HOST': 'localhost',  # Change this to your MySQL server's host
-        'PORT': '3306',       # Change this to your MySQL server's port
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -127,8 +127,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# AUTH_USER_MODEL = 'home_app.CustomUser'
-# AUTHENTICATION_BACKENDS = 'django.contrib.auth.backends.ModelBackend'
 AUTHENTICATION_BACKENDS = [
     'home_app.authe.CustomAuthBackend',
     'django.contrib.auth.backends.ModelBackend',  # This should always be included

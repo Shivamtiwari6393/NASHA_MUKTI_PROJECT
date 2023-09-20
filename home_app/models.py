@@ -37,12 +37,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
-    # Add your custom fields here
-    # For example, you might add a profile picture field:
-    # profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
-
-    # You can add more custom fields as needed
-
     objects = CustomUserManager()
 
     USERNAME_FIELD = "email"
@@ -52,13 +46,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         # Define a custom related_name for groups and user_permissions
         # This avoids the clash with the built-in User model
         # You can use any related_name you prefer
-        permissions = [
-            ("can_change_group", "Can change group"),
-            ("can_change_permission", "Can change permission"),
-        ]
 
-    def __str__(self):
-        return self.email
+        def __str__(self):
+            return self.email
 
     # Define related_name for groups and user_permissions to avoid clashes
     groups = models.ManyToManyField(
