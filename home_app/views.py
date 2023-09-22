@@ -7,33 +7,21 @@ from .models import Patient
 from django.contrib import messages
 
 
-# REGISTRATION VIEW---------REGISTRATION VIEW----------REGISTRATION VIEW---------REGISTRATION VIEW-----------REGISTRATION VIEW-------------REGISTRATION VIEW---
+# REGISTRATION VIEW----------REGISTRATION_VIEW----------REGISTRATION_VIEW----------REGISTRATION_VIEW----------REGISTRATION_VIEW----------REGISTRATION_VIEW
 
 
 def register(request):
-    print("entererd")
     if request.method == 'POST':
-        print('inside post')
         form = RegistrationForm(request.POST)
-        print(form)
         if form.is_valid():
             user = form.save()
-            print('user : ', user)
-
             # Automatically log the user in after registration
             email = form.cleaned_data['email']
-            print('email :', email)
             password = form.cleaned_data['password1']
-            print('password : ', password)
             user = authenticate(request, email=email, password=password)
-            print('auth user ', user)
-            print(user)
             if user:
-                print('before login', user)
                 login(request, user)
-                print('logged in', user)
                 messages.success(request, 'Registration successful')
-                print('redirected')
                 return redirect('/patient')
             else:
                 messages.error(request, 'Authentication failed')
@@ -41,38 +29,32 @@ def register(request):
 
             messages.error(request, 'Form is invalid')
     else:
-        print('initialized')
         form = RegistrationForm()
 
     return render(request, 'register.html', {'form': form})
 
 
-# LOGIN VIEW-----LOGIN VIEW--------LOGIN VIEW---------LOGIN VIEW--------------LOGIN VIEW-----------------------LOGIN VIEW-----------LOGIN VIEW--------------LOGIN VIEW-----------
+# LOGIN VIEW----------LOGIN VIEW----------LOGIN VIEW----------LOGIN VIEW----------LOGIN VIEW----------LOGIN VIEW----------LOGIN VIEW----------LOGIN VIEW
 
 
 def user_login(request):
-    print('ENTERED')
     if request.method == 'POST':
-        print('INSIDE POST', request)
         email = request.POST['email']
-        print('EMAIL', email)
         password = request.POST['password']
-        print('password', password)
         user = authenticate(request, email=email, password=password)
-        print('user', user)
         if user is not None:
             login(request, user)
-
             return redirect('/patient')
         else:
-
             messages.error(
                 request, 'Authentication failed. Please check your credentials.')
     return render(request, 'login.html')
 
 
+# LOGOUT_VIEW----------LOGOUT_VIEW----------LOGOUT_VIEW----------LOGOUT_VIEW----------LOGOUT_VIEW----------LOGOUT_VIEW----------LOGOUT_VIEW----------LOGOUT_VIEW3
+
+
 def user_logout(request):
-    print("logged out")
     logout(request)
     return redirect('login')  # Redirect to the login page after logout
 

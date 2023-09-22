@@ -4,7 +4,9 @@ from django.utils import timezone
 from django.contrib.auth.models import Group, Permission
 
 
-# MODEL FOR REGISTRATION-------------------------------------------------------------------------------------
+
+# REGISTRATION_MODEL-------------REGISTRATION_MODEL-------------REGISTRATION_MODEL-------------REGISTRATION_MODEL------------------REGISTRATION_MODEL----------------------
+
 
 
 class CustomUserManager(BaseUserManager):
@@ -67,7 +69,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
 
 
-# END REGISTRATION-------------------------------------------------------------------------------------------------------------------------
+
+# PATIENT_MODEL-----------PATIENT_MODEL----------------PATIENT_MODEL---------------------PATIENT_MODEL------------------PATIENT_MODEL-----------------PATIENT_MODEL--------------------------------------
+
 
 
 class Patient(models.Model):
@@ -81,3 +85,7 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------------------------
