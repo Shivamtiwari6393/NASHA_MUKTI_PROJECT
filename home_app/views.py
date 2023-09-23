@@ -70,10 +70,13 @@ def create_patient(request):
             patient = Patient(
                 name=formp.cleaned_data['name'],
                 age=formp.cleaned_data['age'],
+                gender=formp.cleaned_data['gender'],
                 contact_number=formp.cleaned_data['contact_number'],
+                pin_code=formp.cleaned_data['pin_code'],
                 address=formp.cleaned_data['address'],
                 state=formp.cleaned_data['state'],
                 district=formp.cleaned_data['district'],
+                addiction=formp.cleaned_data['addiction'],
             )
             patient.save()
             # Redirect to a success page or another view

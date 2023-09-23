@@ -4,9 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import Group, Permission
 
 
-
 # REGISTRATION_MODEL-------------REGISTRATION_MODEL-------------REGISTRATION_MODEL-------------REGISTRATION_MODEL------------------REGISTRATION_MODEL----------------------
-
 
 
 class CustomUserManager(BaseUserManager):
@@ -69,23 +67,30 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
 
 
-
 # PATIENT_MODEL-----------PATIENT_MODEL----------------PATIENT_MODEL---------------------PATIENT_MODEL------------------PATIENT_MODEL-----------------PATIENT_MODEL--------------------------------------
-
 
 
 class Patient(models.Model):
     name = models.CharField(max_length=100, verbose_name='Full Name')
     age = models.IntegerField(verbose_name='Age')
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    )
+
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     contact_number = models.CharField(
         max_length=15, verbose_name='Contact Number')
+    pin_code = models.CharField(
+        max_length=6, verbose_name='pin_code')
     address = models.CharField(max_length=50, verbose_name='Address')
     state = models.CharField(max_length=15, verbose_name='State')
     district = models.CharField(max_length=15, verbose_name='District')
+    addiction = models.CharField(max_length=15, verbose_name='Addiction')
 
     def __str__(self):
         return self.name
-
 
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
