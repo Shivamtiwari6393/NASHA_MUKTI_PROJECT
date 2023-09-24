@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home_app',
+    'nasha_mukti_app',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'nasa_mukti.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'user_registration',
+        'NAME': 'nasha_mukti',
         'USER': 'root',
         'PASSWORD': 'Shivam@7219',
         'HOST': 'localhost',
@@ -132,6 +132,6 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTHENTICATION_BACKENDS = [
-    'home_app.authe.CustomAuthBackend',
+    'nasha_mukti_app.authe.CustomAuthBackend',
     'django.contrib.auth.backends.ModelBackend',  # This should always be included
 ]
