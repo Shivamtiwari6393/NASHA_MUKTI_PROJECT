@@ -1,29 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome To Nasha Mukti Portal-Login</title>
-  </head>
-  <body>
-    <h2>Login</h2>
-    <form method="post">
-      {% csrf_token %}
-      <p>
-        <label for="email">Email :</label>
-        <input type="email" name="email" id="email" placeholder="Enter Email" />
-      </p>
-      <p>
-        <label for="password">Password :</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Enter Passsword"
-        />
-      </p>
-      <button type="submit">Login</button>
-      <button><a href="/">Register</a></button>
-    </form>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome To Nasha Mukti Portal-Login</title>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+
+<body>
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" placeholder="Enter Email" />
+    </p>
+    <p>
+      <label for="password">Password :</label>
+      <input type="password" name="password" id="password" placeholder="Enter Passsword" />
+    </p>
+    <button type="submit" id="submit">Login</button>
+    <button id="login"><a href="/">Register</a></button>
+    <button type="reset" id="reset">Reset</button>
+  </form>
+</body>
+
 </html>

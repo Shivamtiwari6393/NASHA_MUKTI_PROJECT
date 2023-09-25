@@ -9,14 +9,16 @@ from .models import CustomUser
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
-        max_length=254, help_text='Required. Enter a valid email address.')
+        max_length=254)
 
     class Meta:
 
         model = CustomUser
         fields = ['email', 'first_name', 'last_name', 'password1', 'password2']
 
-
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['password2'].help_text = ''
 # LOGIN-IN FORM---------LOGIN-IN FORM--------------LOGIN-IN FORM------------LOGIN-IN FORM------------LOGIN-IN FORM-----------------------
 
 
