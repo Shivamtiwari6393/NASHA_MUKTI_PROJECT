@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
     border: none;
 }
@@ -8,10 +8,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #acc8e5;
+    background-color: rgb(174, 201, 229);
     text-align: center;
     border-radius: 50px;
-    box-shadow: 0 3px 6px rgba(191, 191, 191, 0.9);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
 }
 h2{
     background-color: rgb(164, 164, 224,0.8);
@@ -38,29 +38,32 @@ right: 14px;
     position: relative;
     right: 30px;
 }
-h2,div,input{
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+h2,p,input{
+    box-shadow: 0 3px 6px rgba(71, 71, 71, 0.9);
     border-radius: 50px;
 }
-input,div,button{
+input,p,button{
 font-weight: bold;
 }
 button{
     display: block;
     width: 100%;
     margin: 10px;
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+    box-shadow: 0 3px 6px rgba(83, 82, 82, 0.9);
     border-radius: 50px;
 }
 #submit{
+    margin-top: 50px;
     background-color: rgb(112, 193, 112);
     padding: 15px;
 }
 #reset{
+    margin-top: 20px;
     background-color: rgb(178, 89, 89);
     padding: 15px;
 }
 #login{
+    margin-top: 20px;
     background-color:darkgrey;
     padding: 15px;
 }
@@ -68,7 +71,7 @@ a{  color: black;
     text-decoration: none;
     width: 100%;
 }
-button:hover,input:hover,div:hover{
+button:hover,input:hover,div:hover,p:hover{
     transition-duration: 0.3s;
     box-shadow: 0px 0px 5px rgb(4, 4, 5,0.9);
 }

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fetch.css' %}" />
+    <title>fetch</title>
+</head>
+
+<body>
+    <h1>Data from NASHA_MUKTI_DATABASE</h1>
+    <table>
+        <thead>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>GENDER</th>
+            <th>CONTACT NUMBER</th>
+            <th>ADDICTION</th>
+            <th>STATE</th>
+            <th>DISTRICT</th>
+            <th>PIN CODE</th>
+            <th>ADDRESS</th>
+        </thead>
+        <tbody>
+
+            {% for item in data %}
+            <tr>
+                <td>
+                    {{ item.name }}
+                </td>
+                <td>
+                    {{ item.age }}
+                </td>
+                <td>
+                    {{item.gender}}
+                </td>
+                <td>
+                    {{item.contact_number}}
+                </td>
+                <td>
+                    {{item.addiction}}
+                </td>
+                <td>
+                    {{item.state}}
+                </td>
+                <td>
+                    {{item.district}}
+                </td>
+                <td>
+                    {{item.pin_code}}
+                </td>
+                <td>
+                    {{item.address}}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
