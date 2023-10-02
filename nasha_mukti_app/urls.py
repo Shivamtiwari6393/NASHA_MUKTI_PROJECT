@@ -6,4 +6,5 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('logout', views.user_logout, name="logout"),
     path("patient", views.create_patient, name="patient_details"),
+    path('fetch', views.fetch, name='fetch'),
 ]

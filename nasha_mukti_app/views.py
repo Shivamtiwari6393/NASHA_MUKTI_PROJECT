@@ -88,3 +88,9 @@ def create_patient(request):
     else:
         formp = patientform()
     return render(request, 'patient.html', {'formp': formp})
+# fetch view----------fetch view----------fetch view----------fetch view----------fetch view----------fetch view----------fetch view----------fetch view
+
+
+def fetch(request):
+    data = Patient.objects.all()
+    return render(request, 'fetch.html', {'data': data})

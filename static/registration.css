@@ -2,24 +2,26 @@
     box-sizing: border-box;
     margin: 5px;
     padding: 10px;
+    border: none;
 }
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #acc8e5;
+    background-color: #ffffff;
     text-align: center;
     border-radius: 50px;
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.5);
 }
 h2{
-    background-color: rgb(164, 164, 224);
-    width: 80%;
+    background-color: rgb(164, 164, 224,0.8);
+    width: 80vw;
     padding: 20px;
 }
 #id_first_name{
     position: relative;
     right: 15px;
+
 }
 #id_last_name{
 position: relative;
@@ -38,7 +40,8 @@ right: 14px;
     right: 30px;
 }
 h2,div,input{
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+    border: none;
+    box-shadow: 0px 3px 3px 2px rgba(193, 191, 191, 0.9);
     border-radius: 50px;
 }
 input,div,button{
@@ -48,15 +51,15 @@ button{
     display: block;
     width: 100%;
     margin: 10px;
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+    box-shadow: 0 3px 6px rgba(158, 156, 156, 0.9);
     border-radius: 50px;
 }
 #submit{
-    background-color: rgb(112, 193, 112);
+    background-color: rgb(112, 193, 112,0.9);
     padding: 15px;
 }
 #reset{
-    background-color: rgb(178, 89, 89);
+    background-color: rgb(178, 89, 89,0.9);
     padding: 15px;
 }
 #login{
@@ -74,6 +77,4 @@ li:hover{
     border-radius: 50px;
     transition-duration: 0.3s;
     box-shadow: 0px 0px 5px rgb(4, 4, 5,0.9);
-    font-weight: bold;
-}
-
+    }

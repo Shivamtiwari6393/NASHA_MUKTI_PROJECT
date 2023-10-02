@@ -6,19 +6,34 @@ from .models import CustomUser
 
 # REGISTRATION FORM----------REGISTRATION FORM----------------------REGISTRATION FORM-------------------REGISTRATION FORM----------REGISTRATION FORM------------
 
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from .models import CustomUser  # Import your CustomUser model
+
 
 class RegistrationForm(UserCreationForm):
-    email = forms.EmailField(
-        max_length=254)
+    email = forms.EmailField(max_length=254, widget=forms.TextInput(
+        attrs={'placeholder': 'Enter Email'}))
+    first_name = forms.CharField(max_length=30, widget=forms.TextInput(
+        attrs={'placeholder': 'Enter First Name'}))
+    last_name = forms.CharField(max_length=30, widget=forms.TextInput(
+        attrs={'placeholder': 'Enter Last Name'}))
+    password1 = forms.CharField(
+        label="Password",
+        widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password'}),
+    )
+    password2 = forms.CharField(
+        label="Confirm Password",
+        widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}),
+        help_text='',  # Clear the help text as you did in your code
+    )
 
     class Meta:
-
         model = CustomUser
         fields = ['email', 'first_name', 'last_name', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['password2'].help_text = ''
 # LOGIN-IN FORM---------LOGIN-IN FORM--------------LOGIN-IN FORM------------LOGIN-IN FORM------------LOGIN-IN FORM-----------------------
 
 

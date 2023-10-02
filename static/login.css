@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 5px;
     padding: 10px;
+    border: none;
 }
 body{
     display: flex;
@@ -10,10 +11,10 @@ body{
     background-color: #acc8e5;
     text-align: center;
     border-radius: 50px;
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+    box-shadow: 0 3px 6px rgba(191, 191, 191, 0.9);
 }
 h2{
-    background-color: rgb(164, 164, 224);
+    background-color: rgb(164, 164, 224,0.8);
     width: 80%;
     padding: 20px;
 }
