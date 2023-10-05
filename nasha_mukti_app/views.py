@@ -1,5 +1,4 @@
-from django.contrib.auth import login, authenticate
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm
 from .forms import patientform
