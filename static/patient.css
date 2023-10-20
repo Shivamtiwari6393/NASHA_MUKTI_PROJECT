@@ -19,7 +19,7 @@ h2{
     padding: 20px;
 }
 h2,input{
-    box-shadow: 0 3px 6px rgba(9, 9, 9, 0.9);
+    box-shadow: 0 3px 6px rgba(81, 16, 16, 0.555);
     border-radius: 50px;
 }
 input,p,button{
@@ -33,7 +33,7 @@ button{
     border-radius: 50px;
 }
 #submit{
-    background-color: rgb(112, 193, 112);
+    background-color: rgba(76, 177, 76, 0.968);
     padding: 15px;
 }
 #logout{
