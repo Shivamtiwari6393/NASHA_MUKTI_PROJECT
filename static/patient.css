@@ -41,7 +41,7 @@ button{
     padding: 15px;
 }
 #reset{
-    background-color:darkgrey;
+    background-color:rgba(169, 169, 169, 0.845);
     padding: 15px;
 }
 a{  color: black;
